@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+<title id="title">Anything at Supun — Modern E-Commerce Frontend</title>
+<desc id="desc">Premium black and red banner showing the Anything at Supun React storefront and an illustrated desktop shopping interface.</desc>
+<defs>
+  <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111317"/><stop offset=".56" stop-color="#17191e"/><stop offset="1" stop-color="#32181f"/></linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ed1b38"/><stop offset="1" stop-color="#c90020"/></linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f4f4f6"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-30%" width="145%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity=".33"/></filter>
+  <clipPath id="screenClip"><rect x="838" y="65" width="314" height="195" rx="15"/></clipPath>
+</defs>
+<rect x="0" y="0" width="1200" height="320" rx="26" fill="url(#background)"/>
+<circle cx="1100" cy="35" r="192" fill="#e21c37" opacity=".10"/>
+<circle cx="1183" cy="308" r="182" fill="#ed1b38" opacity=".075"/>
+<path d="M0 281 C185 261 350 305 560 278 C720 256 890 251 1200 301" fill="none" stroke="#fa5069" stroke-opacity=".17" stroke-width="2"/>
+<rect x="62" y="49" width="92" height="6" rx="3" fill="url(#red)"/>
+<text x="62" y="117" fill="#ffffff" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="50" font-weight="800" letter-spacing="-.5">ANYTHING AT</text>
+<text x="62" y="169" fill="#f13953" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="54" font-weight="800" letter-spacing="1">SUPUN</text>
+<text x="290" y="166" fill="#f0eef0" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="23" font-weight="600">E-Commerce Frontend</text>
+<text x="64" y="211" fill="#b7b7c1" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="15" letter-spacing="1.4">CATALOGUE  •  PRODUCT PAGES  •  CART  •  CHECKOUT UI</text>
+<g font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700">
+ <rect x="62" y="238" width="89" height="37" rx="18.5" fill="#2b1c24" stroke="#ec3954" stroke-opacity=".8"/><text x="106.5" y="262" text-anchor="middle" fill="#ffced7">REACT</text>
+ <rect x="162" y="238" width="123" height="37" rx="18.5" fill="#22242d" stroke="#8698c9" stroke-opacity=".7"/><text x="223.5" y="262" text-anchor="middle" fill="#dce5ff">TYPESCRIPT</text>
+ <rect x="296" y="238" width="77" height="37" rx="18.5" fill="#292434" stroke="#b1a3db" stroke-opacity=".7"/><text x="334.5" y="262" text-anchor="middle" fill="#ece0ff">VITE</text>
+ <rect x="384" y="238" width="126" height="37" rx="18.5" fill="#1f2928" stroke="#77a7a1" stroke-opacity=".6"/><text x="447" y="262" text-anchor="middle" fill="#c5e6df">API-READY</text>
+</g>
+<g filter="url(#shadow)">
+ <rect x="828" y="55" width="335" height="213" rx="22" fill="#27272d" stroke="#6c414d" stroke-width="2"/>
+ <rect x="838" y="65" width="314" height="195" rx="15" fill="url(#screen)"/>
+ <g clip-path="url(#screenClip)">
+  <rect x="838" y="65" width="314" height="41" fill="#ffffff"/>
+  <text x="852" y="89" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#202127">anythingat</text>
+  <text x="917" y="89" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="900" fill="#dc1733">SUPUN</text>
+  <rect x="1013" y="78" width="105" height="16" rx="8" fill="#f0f1f3"/>
+  <circle cx="1134" cy="86" r="10" fill="#dc1733"/>
+  <path d="M1131 86h6m-3-3v6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="838" y="106" width="314" height="19" fill="#f6f6f7"/>
+  <rect x="848" y="112" width="67" height="6" rx="3" fill="#e21a36"/>
+  <rect x="924" y="112" width="39" height="6" rx="3" fill="#d4d6dc"/>
+  <rect x="972" y="112" width="43" height="6" rx="3" fill="#d4d6dc"/>
+  <rect x="1024" y="112" width="48" height="6" rx="3" fill="#d4d6dc"/>
+  <g>
+   <rect x="853" y="138" width="83" height="100" rx="8" fill="#ffffff" stroke="#e7e7ea"/>
+   <rect x="948" y="138" width="83" height="100" rx="8" fill="#ffffff" stroke="#e7e7ea"/>
+   <rect x="1043" y="138" width="91" height="100" rx="8" fill="#ffffff" stroke="#e7e7ea"/>
+   <rect x="863" y="146" width="63" height="61" rx="6" fill="#f5f5f6"/>
+   <rect x="958" y="146" width="63" height="61" rx="6" fill="#f5f5f6"/>
+   <rect x="1053" y="146" width="71" height="61" rx="6" fill="#f5f5f6"/>
+   <rect x="884" y="153" width="23" height="47" rx="9" fill="#e9264b"/>
+   <rect x="889" y="147" width="13" height="11" rx="4" fill="#f5a6bf"/>
+   <circle cx="990" cy="175" r="26" fill="#eff1f5" stroke="#575d67" stroke-width="5"/>
+   <circle cx="990" cy="175" r="20" fill="#fff" stroke="#c3c7cf"/>
+   <path d="M990 161v14l9 6" stroke="#474a54" stroke-width="2" fill="none"/>
+   <rect x="1059" y="168" width="58" height="35" rx="3" fill="#394859"/>
+   <rect x="1062" y="171" width="52" height="28" rx="2" fill="#62a8c6"/>
+   <rect x="1084" y="203" width="9" height="4" fill="#757982"/>
+   <rect x="1075" y="207" width="27" height="2" rx="1" fill="#757982"/>
+   <rect x="862" y="214" width="53" height="5" rx="2.5" fill="#40424b"/>
+   <rect x="862" y="224" width="44" height="5" rx="2.5" fill="#e21a36"/>
+   <rect x="957" y="214" width="61" height="5" rx="2.5" fill="#40424b"/>
+   <rect x="957" y="224" width="47" height="5" rx="2.5" fill="#e21a36"/>
+   <rect x="1052" y="214" width="61" height="5" rx="2.5" fill="#40424b"/>
+   <rect x="1052" y="224" width="44" height="5" rx="2.5" fill="#e21a36"/>
+  </g>
+ </g>
+</g>
+<rect x="935" y="278" width="124" height="24" rx="12" fill="#341f29" stroke="#e02847" stroke-opacity=".6"/>
+<text x="997" y="294" text-anchor="middle" fill="#f6d6dd" font-family="Manrope,Segoe UI,Arial,sans-serif" font-size="11.5" font-weight="700" letter-spacing="1">FRONTEND • PHASE 1</text>
+</svg>
