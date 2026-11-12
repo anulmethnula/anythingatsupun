@@ -1,0 +1,50 @@
+import type {HeroSlide} from '../types/hero';
+
+export const heroFallbackSlides:HeroSlide[]=[{
+ id:'everyday-value',
+ eyebrow:'EVERYDAY VALUE',
+ heading:'Everything you need,',
+ highlightedHeading:'all in one place.',
+ description:'Explore trusted home, lifestyle and electronic essentials at prices made for Sri Lankan families.',
+ desktopImage:{url:'/assets/hero-product-showcase.png',alt:'Smart TV, coffee machine, headphones, wristwatch, perfume, air fryer, blender and indoor plant',width:1536,height:1024},
+ mobileImage:{url:'/assets/hero-product-showcase-mobile.png',alt:'Home, lifestyle and electronic essentials',width:1536,height:1024},
+ primaryButton:{text:'Shop Now',link:'/shop'},
+ secondaryButton:{text:'Explore Categories',link:'/shop'},
+ showPrimaryButton:true,
+ showSecondaryButton:true,
+ imagePresentation:'product',
+ order:1,
+ isActive:true,
+ status:'published'
+},{
+ id:'hero2-lifestyle-essentials',
+ eyebrow:'EVERYDAY ESSENTIALS',
+ heading:'More to discover,',
+ highlightedHeading:'all in one place.',
+ description:'Shop technology, personal care and lifestyle essentials selected for every part of your day.',
+ desktopImage:{url:'/assets/hero2-white.png',alt:'Television, plant, action camera, headphones, wristwatch, perfume and personal care products',width:1916,height:821},
+ mobileImage:{url:'/assets/hero2-white.png',alt:'A selection of technology, lifestyle and personal care products',width:1916,height:821},
+ primaryButton:{text:'Shop Now',link:'/shop'},
+ secondaryButton:{text:'Explore Categories',link:'/shop'},
+ showPrimaryButton:true,
+ showSecondaryButton:true,
+ imagePresentation:'banner',
+ order:2,
+ isActive:true,
+ status:'published'
+},{
+ id:'home-appliances',
+ eyebrow:'HOME APPLIANCES',
+ heading:'Home appliances for a',
+ highlightedHeading:'better lifestyle.',
+ description:'Reliable, modern and everyday essentials for your home.',
+ desktopImage:{url:'/assets/hero3-clean.png',alt:'Refrigerator, washing machine, air conditioner, television and vacuum cleaner',width:1915,height:821},
+ mobileImage:{url:'/assets/hero3-clean.png',alt:'Modern home appliances for a better lifestyle',width:1915,height:821},
+ primaryButton:{text:'Shop Home Appliances',link:'/category/household'},
+ showPrimaryButton:true,
+ showSecondaryButton:false,
+ imagePresentation:'banner',
+ order:3,
+ isActive:true,
+ status:'published'
+}];
