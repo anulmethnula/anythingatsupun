@@ -17,7 +17,7 @@ export type HeroSlide={
  highlightedHeading?:string;
  description:string;
  desktopImage:HeroImage;
- mobileImage:HeroImage;
+ mobileImage?:HeroImage;
  primaryButton:HeroButton;
  secondaryButton?:HeroButton;
  showPrimaryButton:boolean;

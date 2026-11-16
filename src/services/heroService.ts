@@ -22,10 +22,10 @@ const dateIsValid=(value:unknown)=>typeof value==='string'&&!Number.isNaN(Date.p
 const parseSlide=(value:unknown):HeroSlide|null=>{
  if(!value||typeof value!=='object')return null;
  const item=value as Record<string,unknown>;const desktopImage=image(item.desktopImage);const mobileImage=image(item.mobileImage);const primaryButton=button(item.primaryButton);const secondaryButton=button(item.secondaryButton);const heading=text(item.heading,140);const description=text(item.description,500);
- if(!desktopImage||!mobileImage||!primaryButton||!heading||!description)return null;
+ if(!desktopImage||!primaryButton||!heading||!description)return null;
  const status=item.status==='published'||item.status==='scheduled'||item.status==='draft'?item.status:'draft';
  const imagePresentation=item.imagePresentation==='full-banner'?'full-banner':item.imagePresentation==='banner'?'banner':'product';
- return {id:text(item.id,80)||crypto.randomUUID(),eyebrow:text(item.eyebrow,60)||undefined,heading,highlightedHeading:text(item.highlightedHeading,140)||undefined,description,desktopImage,mobileImage,primaryButton,secondaryButton:secondaryButton||undefined,showPrimaryButton:item.showPrimaryButton!==false,showSecondaryButton:item.showSecondaryButton!==false,imagePresentation,order:typeof item.order==='number'?item.order:999,isActive:item.isActive===true,status,publishAt:dateIsValid(item.publishAt)?item.publishAt as string:undefined,expiresAt:dateIsValid(item.expiresAt)?item.expiresAt as string:undefined};
+ return {id:text(item.id,80)||crypto.randomUUID(),eyebrow:text(item.eyebrow,60)||undefined,heading,highlightedHeading:text(item.highlightedHeading,140)||undefined,description,desktopImage,mobileImage:mobileImage||undefined,primaryButton,secondaryButton:secondaryButton||undefined,showPrimaryButton:item.showPrimaryButton!==false,showSecondaryButton:item.showSecondaryButton===true&&Boolean(secondaryButton),imagePresentation,order:typeof item.order==='number'?item.order:999,isActive:item.isActive===true,status,publishAt:dateIsValid(item.publishAt)?item.publishAt as string:undefined,expiresAt:dateIsValid(item.expiresAt)?item.expiresAt as string:undefined};
 };
 
 const isPublishedNow=(slide:HeroSlide,now=Date.now())=>slide.isActive&&slide.status==='published'&&(!slide.publishAt||Date.parse(slide.publishAt)<=now)&&(!slide.expiresAt||Date.parse(slide.expiresAt)>now);
