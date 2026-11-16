@@ -257,6 +257,27 @@ export function Catalog({ search = false }: { search?: boolean }) {
     </aside>
   );
 
+  if (search && !query) {
+    return (
+      <main className="catalog-page catalog-empty-search">
+        <section className="catalog-hero">
+          <div className="container">
+            <div>
+              <span>PRODUCT SEARCH</span>
+              <h1>Find something you’ll love</h1>
+              <p>Use the search field above, or browse the complete collection.</p>
+            </div>
+          </div>
+        </section>
+        <div className="container catalog-search-state">
+          <h2>What are you looking for?</h2>
+          <p>Search by product, brand, or category to see matching items.</p>
+          <Link to="/shop">Browse all products</Link>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="catalog-page">
       <section className="catalog-hero">
