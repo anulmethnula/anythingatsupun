@@ -1,9 +1,11 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
+  Check,
   ChevronLeft,
   ChevronRight,
   Eye,
   Heart,
+  LoaderCircle,
   Minus,
   Plus,
   RotateCcw,
@@ -32,6 +34,9 @@ export function ProductPage() {
     products.find((product) => product.id === Number(id)) || products[0];
   const store = useStore();
   const [qty, setQty] = useState(1);
+  const [addState, setAddState] = useState<"idle" | "loading" | "added">("idle");
+  const addLocked = useRef(false);
+  const addConfirmationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [tab, setTab] = useState<ProductTab>("details");
   const [selectedImage, setSelectedImage] = useState(p.image);
   const [viewerCount, setViewerCount] = useState<number | null>(null);
@@ -112,9 +117,24 @@ export function ProductPage() {
     };
   }, [p.id]);
 
-  const addToCart = () => {
-    if (!p.stock) return;
-    for (let index = 0; index < qty; index++) store.add(p);
+  useEffect(() => () => {
+    if (addConfirmationTimer.current) clearTimeout(addConfirmationTimer.current);
+  }, []);
+  const addToCart = async () => {
+    if (!p.stock || addLocked.current) return;
+    addLocked.current = true;
+    setAddState("loading");
+    try {
+      await store.add(p, qty);
+      setAddState("added");
+      addConfirmationTimer.current = setTimeout(() => {
+        addLocked.current = false;
+        setAddState("idle");
+      }, 1200);
+    } catch {
+      addLocked.current = false;
+      setAddState("idle");
+    }
   };
   const scrollRelated = (direction: -1 | 1) =>
     relatedRef.current?.scrollBy({
@@ -302,11 +322,12 @@ export function ProductPage() {
             <button
               type="button"
               className="pd-add"
-              disabled={!p.stock}
+              disabled={!p.stock || addState !== "idle"}
               onClick={addToCart}
+              aria-busy={addState === "loading"}
             >
-              <ShoppingCart />
-              Add to Cart
+              {addState === "loading" ? <LoaderCircle className="cart-add-spinner" /> : addState === "added" ? <Check /> : <ShoppingCart />}
+              {addState === "loading" ? "Adding..." : addState === "added" ? "Added to Cart" : "Add to Cart"}
             </button>
             <button
               type="button"

@@ -1,18 +1,19 @@
 import {useEffect,useRef,useState} from 'react';
-import {Check,Heart,ShoppingCart} from 'lucide-react';
+import {Check,Heart,LoaderCircle,ShoppingCart} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {money,Product} from '../data/catalog';
 import {useStore} from '../context/StoreContext';
 
 export function ProductCard({product}:{product:Product}){
  const store=useStore();
- const [added,setAdded]=useState(false);
+ const [addState,setAddState]=useState<'idle'|'loading'|'added'>('idle');
+ const addLocked=useRef(false);
  const confirmationTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
  const sale=product.originalPrice?Math.round((1-product.price/product.originalPrice)*100):0;
  const wished=store.wishlist.includes(product.id);
  const purchaseLabel=product.options?'Select options':product.stock?'Add to cart':'Out of stock';
  useEffect(()=>()=>{if(confirmationTimer.current)clearTimeout(confirmationTimer.current)},[]);
- const addToCart=()=>{if(added||!product.stock)return;store.add(product);setAdded(true);confirmationTimer.current=setTimeout(()=>setAdded(false),1200)};
+ const addToCart=async()=>{if(addLocked.current||!product.stock)return;addLocked.current=true;setAddState('loading');try{await store.add(product);setAddState('added');confirmationTimer.current=setTimeout(()=>{addLocked.current=false;setAddState('idle')},1200)}catch{addLocked.current=false;setAddState('idle')}};
  return <article className="product-card">
   <div className="product-media">
    {sale>0&&<span className="sale">-{sale}%</span>}
@@ -29,7 +30,7 @@ export function ProductCard({product}:{product:Product}){
    </div>
   </div>
   <div className="product-purchase-reveal">
-   {product.options?<Link className="product-purchase-button" to={`/product/${product.id}`} aria-label={`Select options for ${product.name}`}><ShoppingCart/>{purchaseLabel}</Link>:<button type="button" className={`product-purchase-button ${added?'is-added':''}`} disabled={!product.stock||added} onClick={addToCart} aria-label={product.stock?`${added?'Added':'Add'} ${product.name} to cart`:undefined}>{added?<Check/>:<ShoppingCart/>}<span aria-live="polite">{added?'Added to Cart':purchaseLabel}</span></button>}
+   {product.options?<Link className="product-purchase-button" to={`/product/${product.id}`} aria-label={`Select options for ${product.name}`}><ShoppingCart/>{purchaseLabel}</Link>:<button type="button" className={`product-purchase-button ${addState==='added'?'is-added':''}`} disabled={!product.stock||addState!=='idle'} onClick={addToCart} aria-label={product.stock?`${addState==='loading'?'Adding':addState==='added'?'Added':'Add'} ${product.name} to cart`:undefined} aria-busy={addState==='loading'}>{addState==='loading'?<LoaderCircle className="cart-add-spinner"/>:addState==='added'?<Check/>:<ShoppingCart/>}<span aria-live="polite">{addState==='loading'?'Adding...':addState==='added'?'Added to Cart':purchaseLabel}</span></button>}
   </div>
  </article>
 }
