@@ -4,6 +4,10 @@
 
 <p align="center"><b>Modern shopping • smooth browsing • responsive storefront</b></p>
 
+<p align="center"><a href="https://www.anythingatsupun.lk/"><b>Visit existing live store</b></a></p>
+
+> **Project status:** Frontend redevelopment in progress. The live store is the existing website, not a deployment of this repository.
+
 <p align="center">
   <img src="https://img.shields.io/badge/React-Frontend-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -15,6 +19,15 @@
 **Anything at Supun** is a modern React storefront redesign for Supun Group of Companies, with a clean red-and-white shopping experience.
 
 **Frontend includes:** Home and banner carousels, shop and categories, product details, filters, search, cart, wishlist, checkout UI and customer account UI.
+
+## Frontend Scope
+
+- Responsive desktop and mobile shopping experience
+- Reusable product, category and promotional components
+- Cart, wishlist, search and checkout interfaces
+- Commerce service interfaces prepared for backend integration
+
+My focus is frontend development; WordPress/WooCommerce backend integration is a separate workstream.
 
 ## Tech Stack
 
@@ -32,7 +45,7 @@ npm run build
 
 **Frontend prototype — WordPress/WooCommerce API integration pending.** Product data is currently local; real accounts, admin updates, orders and payments are not connected.
 
-📄 [Backend API Handover](docs/API-INTEGRATION-HANDOVER.md) · 🌐 [Existing Live Store](https://anythingatsupun.lk/)
+📄 [Backend API Handover](docs/API-INTEGRATION-HANDOVER.md) · 🌐 [Existing Live Store](https://www.anythingatsupun.lk/)
 
 ---
 
