@@ -1114,6 +1114,73 @@ h1,h2,h3,h4,h5,h6,.page-title,.section-title h2,.category-section-head h2,.catal
 /* Prevent off-canvas carousel artwork from creating a desktop scrollbar. */
 html,body{max-width:100%;overflow-x:clip}
 
+/* Mobile cart refinement. Keep this scoped to the cart so desktop and the
+   shared product, checkout and navigation components retain their layout. */
+@media(max-width:767px){
+ .cart-page{padding:14px 0 16px;overflow-x:clip}
+ .cart-page>.container{width:calc(100% - 24px);max-width:none}
+ .cart-page .cart-breadcrumb{margin-bottom:10px}
+ .cart-page .cart-page-heading{margin-bottom:12px}
+ .cart-page .cart-page-heading h1{gap:6px;margin-bottom:3px;font-size:24px;line-height:1.2}
+ .cart-page .cart-page-heading h1 em{width:auto;margin:0;font-size:9px;line-height:1.35}
+ .cart-page .cart-page-heading p{margin:4px 0 0;font-size:11px}
+ .cart-v2.modern-cart{display:block;margin-bottom:18px}
+ .cart-v2 .cart-list{padding:0 10px 10px;border-radius:14px}
+ .cart-v2 .cart-head{display:none}
+ .cart-v2 .cart-item{position:relative;display:grid;grid-template-columns:68px minmax(0,1fr);grid-template-rows:auto auto 46px;gap:3px 10px;min-height:0;padding:12px 0}
+ .cart-v2 .cart-item:last-of-type{border-bottom:0}
+ .cart-v2 .cart-item>img{grid-column:1;grid-row:1/4;align-self:center;width:64px;height:64px;padding:5px;border-radius:10px}
+ .cart-v2 .cart-remove{position:absolute;z-index:1;top:5px;right:-4px;width:44px;height:44px;background:transparent}
+ .cart-v2 .cart-remove svg{width:17px;height:17px}
+ .cart-v2 .cart-product-name{grid-column:2;grid-row:1;min-width:0;padding:0 38px 0 0}
+ .cart-v2 .cart-product-name a{font-size:12px;line-height:1.35;-webkit-line-clamp:2;overflow-wrap:anywhere}
+ .cart-v2 .mobile-remove{display:none}
+ .cart-v2 .cart-unit-price{grid-column:2;grid-row:2;color:#d71932;font-size:12px;font-weight:750;line-height:1.3;text-align:left;white-space:normal}
+ .cart-v2 .cart-item>.quantity{grid-column:2;grid-row:3;align-self:end;justify-self:start;width:116px;height:46px;border-radius:9px}
+ .cart-v2 .cart-item>.quantity button{width:44px;height:44px}
+ .cart-v2 .cart-item>.quantity span{width:28px;font-size:12px}
+ .cart-v2 .cart-item>strong{grid-column:2;grid-row:3;align-self:center;justify-self:end;max-width:calc(100% - 120px);font-size:12px;line-height:1.25;text-align:right;white-space:normal;overflow-wrap:anywhere}
+ .cart-v2 .cart-tools{padding:10px 0 0}
+ .cart-v2 .cart-tools>div{width:100%}
+ .cart-v2 .coupon{display:grid;width:100%;height:44px;grid-template-columns:minmax(0,1fr) 88px;gap:7px}
+ .cart-v2 .coupon svg{left:0;width:18px;height:18px;margin-top:13px}
+ .cart-v2 .coupon input{width:100%;min-width:0;height:44px;min-height:44px;padding:0 10px 0 36px;border-radius:9px;font-size:12px}
+ .cart-v2 .coupon button{width:100%;min-width:0;height:44px;min-height:44px;margin:0;padding:0 10px;border-radius:9px;font-size:12px}
+ .cart-v2 .coupon-message{margin:6px 2px 0;font-size:10px}
+ .cart-v2 .cart-totals{position:static;width:100%;margin-top:12px;padding:15px 14px 14px;border-radius:14px;box-shadow:none}
+ .cart-v2 .cart-totals h2{margin:0 0 7px;padding-left:11px;font-size:18px;line-height:1.25;letter-spacing:-.3px}
+ .cart-v2 .cart-totals h2:before{width:3px}
+ .cart-v2 .cart-totals>div:not(.shopping-bag-art){min-height:44px;padding:10px 2px;gap:10px;font-size:11px;line-height:1.35}
+ .cart-v2 .cart-totals>div>span:last-child{text-align:right}
+ .cart-v2 .cart-totals .total{min-height:56px;margin:7px 0 10px;padding:11px 12px;border-radius:10px}
+ .cart-v2 .cart-totals .total span{font-size:12px}
+ .cart-v2 .cart-totals .total small{font-size:8px}
+ .cart-v2 .cart-totals .total b{font-size:clamp(17px,5.5vw,22px);line-height:1.15;white-space:nowrap}
+ .cart-v2 .checkout-button,.cart-v2 .continue-button{width:100%;height:46px;min-height:46px;padding:0 13px;border-radius:10px;font-size:12px}
+ .cart-v2 .checkout-button svg,.cart-v2 .continue-button svg{width:18px;height:18px}
+ .cart-v2 .continue-button{height:44px;min-height:44px;margin-top:7px;background:#fff}
+ .cart-recommendations{margin:0;padding:18px 0 8px}
+ .cart-reco-head{margin-bottom:11px}
+ .cart-reco-head>div:first-child>span{margin-bottom:3px;font-size:8px}
+ .cart-reco-head>div:first-child h2{font-size:18px}
+ .cart-reco-head>div:last-child{gap:6px}
+ .cart-reco-head>div>a{display:none}
+ .cart-reco-head>div>button{width:44px;height:44px}
+ .cart-recommendations .reco-grid{padding-bottom:8px}
+}
+
+@media(max-width:359.98px){
+ .cart-page>.container{width:calc(100% - 20px)}
+ .cart-v2 .cart-list{padding-inline:9px}
+ .cart-v2 .cart-item{grid-template-columns:62px minmax(0,1fr);gap-x:8px}
+ .cart-v2 .cart-item>img{width:58px;height:58px}
+ .cart-v2 .cart-item>.quantity{width:108px}
+ .cart-v2 .cart-item>.quantity span{width:20px}
+ .cart-v2 .cart-item>strong{max-width:calc(100% - 111px);font-size:11px}
+ .cart-v2 .coupon{grid-template-columns:minmax(0,1fr) 78px;gap:6px}
+ .cart-v2 .cart-totals{padding-inline:12px}
+}
+
 /* Admin-safe hero constraints: uploaded media and copy cannot resize a slide. */
 .hero{contain:layout paint;touch-action:pan-y}
 .hero-inner,.hero-copy,.hero-visual{min-width:0}
